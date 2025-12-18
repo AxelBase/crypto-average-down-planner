@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="../../AxelLab-Logo.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    
+		<link href="../../_app/immutable/assets/0.OTIp9vDG.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/9.Burj-rUS.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.DJysnSzb.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CyGfCSwQ.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/HYv0mIqQ.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/DxIjmpxg.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/B0QpPWkb.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.DOgjGRna.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/DmN_YTEy.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/DVLBZ4vl.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/BkmsgCSN.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.DbYa3ueh.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/ZTuWUxiw.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/BKXYWqi_.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/HcID0QZn.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Ht0uWfKe.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/B8-B8OKQ.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/9.Ctrt5pbQ.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Dc6bHhtd.js"><!--q8x3kg--><meta name="description" content="How the Crypto Average Down Planner handles decimal precision for cryptocurrency amounts and fiat prices to deliver accurate, reliable results."/> <meta property="og:title" content="Precision and Rounding Explained | Crypto Average Down Planner"/> <meta property="og:description" content="How the Crypto Average Down Planner handles decimal precision for cryptocurrency amounts and fiat prices to deliver accurate, reliable results."/> <meta property="og:url" content="../../blog/posts/post6"/> <meta property="og:type" content="article"/> <meta name="twitter:card" content="summary_large_image"/><!----><title>Precision and Rounding Explained | Crypto Average Down Planner</title>
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[--><!----><header class="custom-navbar fixed-top"><nav class="container-fluid px-4 d-flex justify-content-between align-items-center"><div class="d-flex align-items-center gap-3"><a href="../../" class="d-flex align-items-center text-decoration-none"><img src="../../AxelLab-Logo.ico" alt="Logo" style="height: 40px;" class="me-2"/> <span class="fw-bold fs-4" style="color: var(--fern-green);">AxelBase</span></a> <div class="position-relative ms-3"><button class="bmac-button d-flex align-items-center gap-2 text-white"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20,6h-3V4c0-1.1-0.9-2-2-2H9C7.9,2,7,2.9,7,4v2H4C2.9,6,2,6.9,2,8v11c0,1.7,1.3,3,3,3h14c1.7,0,3-1.3,3-3V8C22,6.9,21.1,6,20,6z M9,4h6v2H9V4z M20,19c0,0.6-0.4,1-1,1H5c-0.6,0-1-0.4-1-1V8h16V19z"></path></svg> Buy me a coffee</button> <!--[!--><!--]--></div></div> <ul class="nav gap-2 d-none d-lg-flex"><li><a class="nav-link" href="../../">Home</a></li> <li><a class="nav-link" href="../../#about">About</a></li> <li><a class="nav-link" href="../../#how-to-use">How to use</a></li> <li><a class="nav-link" href="../../#faq">FAQ</a></li> <li><a class="nav-link" href="../../blog">Blog</a></li></ul></nav></header> <main class="container"><!--[--><!----><div class="container fade-in post-layout svelte-q8x3kg"><div class="breadcrumbs svelte-q8x3kg"><a href="../../blog" class="svelte-q8x3kg">Blog</a> <span>/</span> <p class="svelte-q8x3kg">Precision and Rounding Explained</p></div> <article class="prose svelte-q8x3kg"><h1 class="svelte-q8x3kg">Precision and Rounding Explained</h1> <p class="post-meta svelte-q8x3kg">Published: December 18, 2025</p> <p class="svelte-q8x3kg">Accuracy matters deeply in cryptocurrency investing, especially when calculating position adjustments. The Crypto Average Down Planner is designed with careful attention to numerical precision and display formatting to ensure results are both mathematically correct and practically usable.</p> <p class="svelte-q8x3kg">Cryptocurrencies trade in very small decimal units, while fiat prices are typically quoted to two decimal places. Balancing these needs requires thoughtful rounding rules.</p> <h2 class="svelte-q8x3kg">How Precision Works Internally</h2> <p class="svelte-q8x3kg">All calculations use full floating-point precision available in JavaScript. The core formula solves exactly for the amount needed to hit your target average, avoiding cumulative errors that could arise from manual approximation.</p> <p class="svelte-q8x3kg">After computation, the tool derives new total amount, total cost, and new average, which always matches your target exactly within computational limits.</p> <h3 class="svelte-q8x3kg">Display Rounding Rules</h3> <ul class="svelte-q8x3kg"><li class="svelte-q8x3kg">Cryptocurrency amounts (amount to buy, new total): shown to 8 decimal places</li> <li class="svelte-q8x3kg">This matches Bitcoin's satoshi level and exceeds most exchange precision</li> <li class="svelte-q8x3kg">Fiat values (costs and averages): rounded to 2 decimal places for clarity</li> <li class="svelte-q8x3kg">New average price displays exactly as target when mathematically achieved</li></ul> <h3 class="svelte-q8x3kg">Why Eight Decimals for Crypto?</h3> <p class="svelte-q8x3kg">Most major cryptocurrencies allow trading far beyond whole units. Bitcoin can be divided to eight decimals (satoshis), Ethereum to eighteen, but eight provides ample precision without overwhelming display. This ensures you can copy amounts directly into exchanges confidently.</p> <p class="svelte-q8x3kg">Even for coins with higher precision, eight decimals cover realistic position sizes accurately.</p> <h2 class="svelte-q8x3kg">Real-World Precision Example</h2> <p class="svelte-q8x3kg">When small differences exist between current and target averages, the required buy amount may involve repeating decimals. The planner computes the exact value and displays it rounded to eight places, sufficient for practical execution while remaining true to the math.</p> <p class="svelte-q8x3kg">The resulting new average always aligns perfectly with your goal, giving confidence in the outcome.</p> <h2 class="svelte-q8x3kg">FAQ</h2> <details class="svelte-q8x3kg"><summary class="svelte-q8x3kg">Why not show more decimals?</summary> <p class="svelte-q8x3kg">Beyond eight rarely adds meaningful accuracy for real trades and clutters the interface.</p></details> <details class="svelte-q8x3kg"><summary class="svelte-q8x3kg">Can rounding cause small errors?</summary> <p class="svelte-q8x3kg">No—the underlying math is exact. Display rounding is only for readability.</p></details> <details class="svelte-q8x3kg"><summary class="svelte-q8x3kg">Does it handle very large positions?</summary> <p class="svelte-q8x3kg">Yes, precision holds for thousands of units without overflow issues.</p></details> <p class="italic-note svelte-q8x3kg">Clean, precise output builds trust in every calculation.</p></article></div><!----><!--]--></main> <footer class="releative bg-white border-top py-3"><div class="container d-flex flex-column flex-md-row justify-content-between align-items-center"><p class="mb-0 text-muted">© 2025 AxelBase Crypto Average Down Planner</p> <div class="d-flex gap-4"><a href="../../privacy" class="text-decoration-none text-muted small">Privacy Policy</a> <a href="../../terms" class="text-decoration-none text-muted small">Terms of Service</a></div></div></footer><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_16nly2c = {
+						base: new URL("../..", location).pathname.slice(0, -1),
+						assets: "/crypto-average-down-planner"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.DJysnSzb.js"),
+						import("../../_app/immutable/entry/app.DOgjGRna.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 9],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

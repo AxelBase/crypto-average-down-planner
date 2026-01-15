@@ -3,11 +3,9 @@
   import { fly } from 'svelte/transition';
   import '../app.css';
 
-  const paypalUsername = 'AxelLab427';
-  const donationAmounts = [1, 3, 5, 10];
-  let isDropdownOpen = false;
-
   const currentYear = new Date().getFullYear();
+
+  let isDropdownOpen = false;
 
   function toggleDropdown() {
     isDropdownOpen = !isDropdownOpen;
@@ -33,7 +31,6 @@
 
 <header class="custom-navbar fixed-top">
   <nav class="container-fluid px-4 d-flex justify-content-between align-items-center">
-    
     <div class="d-flex align-items-center gap-3">
       <a href="{base}/" class="d-flex align-items-center text-decoration-none">
         <img src="{base}/AxelLab-Logo.ico" alt="Logo" style="height: 40px;" class="me-2" />
@@ -41,25 +38,64 @@
       </a>
 
       <div class="position-relative ms-3" use:clickOutside on:click_outside={closeDropdown}>
-        <button class="bmac-button d-flex align-items-center gap-2 text-white" on:click={toggleDropdown}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20,6h-3V4c0-1.1-0.9-2-2-2H9C7.9,2,7,2.9,7,4v2H4C2.9,6,2,6.9,2,8v11c0,1.7,1.3,3,3,3h14c1.7,0,3-1.3,3-3V8C22,6.9,21.1,6,20,6z M9,4h6v2H9V4z M20,19c0,0.6-0.4,1-1,1H5c-0.6,0-1-0.4-1-1V8h16V19z"/>
+        <button
+          class="bmac-button d-flex align-items-center gap-2 text-white border-0 px-4 py-2 rounded-pill shadow-sm"
+          on:click={toggleDropdown}
+          aria-label="Support options"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M2,21V19H20V21H2M20,8V5H4V8H20M20,10H4V13C4,14.38 4.5,15.63 5.31,16.58L11.64,19H12.36L18.69,16.58C19.5,15.63 20,14.38 20,13V10M16,2H8V4H16V2Z" />
           </svg>
-          Buy me a coffee
+          <span class="d-none d-sm-inline fw-semibold">Buy me a Coffee</span>
         </button>
 
         {#if isDropdownOpen}
-          <div class="dropdown-menu show shadow p-2 border-0 mt-2" 
-               style="border-radius: 15px; min-width: 120px;" 
-               transition:fly={{ y: -10, duration: 250 }}>
-            {#each donationAmounts as amount}
-              <a class="dropdown-item rounded-3 py-2 fw-bold text-center"
-                 href="https://paypal.me/{paypalUsername}/{amount}"
-                 target="_blank" rel="noopener noreferrer"
-                 on:click={closeDropdown}>
-                ${amount}
-              </a>
-            {/each}
+          <div
+            class="bmac-dropdown mt-2"
+            transition:fly={{ y: -10, duration: 250 }}
+          >
+            <a
+              href="https://buymeacoffee.com/axelbase"
+              target="_blank"
+              rel="noopener"
+              on:click={closeDropdown}
+            >
+              <span class="amount">$3</span> One Coffee
+            </a>
+            <a
+              href="https://buymeacoffee.com/axelbase"
+              target="_blank"
+              rel="noopener"
+              on:click={closeDropdown}
+            >
+              <span class="amount">$5</span> Two Coffees
+            </a>
+            <a
+              href="https://buymeacoffee.com/axelbase"
+              target="_blank"
+              rel="noopener"
+              on:click={closeDropdown}
+            >
+              <span class="amount">$10</span> Three Coffees
+            </a>
+
+            <a
+              href="https://buymeacoffee.com/axelbase"
+              target="_blank"
+              rel="noopener"
+              on:click={closeDropdown}
+              class="custom-amount"
+            >
+              Custom Amount
+            </a>
+
+            <a
+              href="bitcoin:bc1q3p0e6vt492m4w4fpz5m2cl4zcfuqqkgaj6myc9?label=AxelBase&message=Buy%20me%20a%20coffee"
+              on:click={closeDropdown}
+              class="custom-amount"
+            >
+              Buy via Crypto (Bitcoin)
+            </a>
           </div>
         {/if}
       </div>
@@ -79,12 +115,74 @@
   <slot />
 </main>
 
-<footer class="releative bg-white border-top py-3">
+<footer class="bg-white border-top py-3">
   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-    <p class="mb-0 text-muted">&copy; {currentYear} AxelBase Crypto Average Down Planner</p>
-    <div class="d-flex gap-4">
+    <p class="mb-0 text-muted">© {currentYear} AxelBase Crypto Average Down Planner</p>
+    <div class="d-flex gap-4 mt-3 mt-md-0">
       <a href="{base}/privacy" class="text-decoration-none text-muted small">Privacy Policy</a>
       <a href="{base}/terms" class="text-decoration-none text-muted small">Terms of Service</a>
     </div>
   </div>
 </footer>
+
+<style>
+  /* ──────────────────────────────────────────────
+     Buy Me a Coffee Dropdown (from file 1, colors adapted)
+  ────────────────────────────────────────────── */
+  .bmac-button {
+    background: var(--fern-green);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(61, 100, 45, 0.2);
+  }
+
+  .bmac-button:hover {
+    background: var(--fern-green-light);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(61, 100, 45, 0.3);
+  }
+
+  .bmac-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(61, 100, 45, 0.18);
+    overflow: hidden;
+    border: 1px solid rgba(61, 100, 45, 0.12);
+    z-index: 1000;
+  }
+
+  .bmac-dropdown a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.98rem;
+    transition: all 0.2s ease;
+  }
+
+  .bmac-dropdown a:hover {
+    background: var(--fern-green-soft);
+    color: var(--fern-green);
+    padding-left: 28px;
+  }
+
+  .bmac-dropdown .amount {
+    font-weight: 700;
+    color: var(--fern-green);
+    font-size: 1.1rem;
+  }
+
+  .bmac-dropdown .custom-amount {
+    font-weight: 600;
+    color: var(--fern-green);
+    border-top: 1px solid #eee;
+    justify-content: center !important;
+  }
+</style>

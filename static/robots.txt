@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://axelbase.github.io/crypto-average-down-planner/sitemap.xml
+Sitemap: https://crypto-average-down-planner.vercel.app/sitemap.xml
